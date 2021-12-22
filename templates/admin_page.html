@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin page</title>
+    <script type="text/javascript">
+            function showMessage() {
+                alert("{{session["current_login_device"]}}");
+            }
+    </script>
+</head>
+<body>
+    <center>
+        <p style="font-size: 100px">Welcome Admin</p>
+
+        <input type="button" style="width: 150px;height: 40px;background-color: white; color: black;
+            border: 2px solid #008CBA;" value="Current Login" onclick="showMessage()"><br>
+
+        <a href="/logout"><input type="button" value="Logout" style="width: 150px;height: 40px;background-color: white;
+            color: black; border: 2px solid red; top: 50px; position: relative"></a>
+    </center>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+    <form action="http://127.0.0.1:5000/logout"method="get">
+        <center>
+            <p style="font-size: 100px; position: relative; top: -40px">Welcome {{session["user_name"]}} </p>
+            <input type="submit" value="Logout" style="position: relative;
+                border: 2px solid #008CBA; bottom: 50px;background-color: white; width: 150px; height: 30px;
+                font-size: 15px;">
+        </center>
+    </form>
+    <div>
+        <form action="http://127.0.0.1:5000/edit_page" method="GET">
+            <input type="submit" value="Edit" style="position: relative; bottom: 75px; left: 50px;
+                border: 2px solid #008CBA; width: 100px; height: 30px;background-color: white;">
+        </form>
+        <center>
+            <form action="http://127.0.0.1:5000/weather" method="GET">
+                 <div style="display: flex; justify-content:flex-end; ">
+                     <input type="submit" value="Weather" style="position: relative; bottom: 105px; right: 40px;
+                    border: 2px solid #008CBA; width: 100px; height: 30px;background-color: white;">
+                 </div>
+            </form>
+            <form action="http://127.0.0.1:5000/notepad" method="GET">
+                <input type="submit" value="notepad">
+            </form>
+        </center>
+    </div>
+    <div>
+
+    </div>
+    <center>
+        <div>
+            <h3>City name: {{session["city_name"]}}</h3>
+            <h3>Notepad: {{ session["notepad_details"] }}</h3>
+    </div>
+    </center>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>Notepad</title>
+        <link rel="icon" type="image/png" href="http://icons.iconarchive.com/icons/hopstarter/sleek-xp-software/256/Notepad-icon.png">
+        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<!--        <script type="text/javascript">-->
+<!--            $(document).ready(function() {-->
+<!--                $('#text').bind('keyup', function() {-->
+<!--                    var content = $(this).val();-->
+<!--                    setTitle(content);-->
+<!--                    setLineNumber(content);-->
+<!--                });-->
+
+<!--                $('#text').bind('focus click', function() {-->
+<!--                    var content = $(this).val();-->
+<!--                    setLineNumber(content);-->
+<!--                });-->
+<!--            });-->
+
+<!--&lt;!&ndash;            function setTitle(content) {&ndash;&gt;-->
+<!--&lt;!&ndash;                var lines = content.split('\n');&ndash;&gt;-->
+
+<!--&lt;!&ndash;                for (i = 0; i < lines.length; i++) {&ndash;&gt;-->
+<!--&lt;!&ndash;                    if (lines[i].trim().length > 0) {&ndash;&gt;-->
+<!--&lt;!&ndash;                        document.title = lines[i];&ndash;&gt;-->
+<!--&lt;!&ndash;                        return 0;&ndash;&gt;-->
+<!--&lt;!&ndash;                    }&ndash;&gt;-->
+<!--&lt;!&ndash;                }&ndash;&gt;-->
+
+<!--&lt;!&ndash;                document.title = "Notepad";&ndash;&gt;-->
+<!--&lt;!&ndash;            }&ndash;&gt;-->
+
+<!--            function setLineNumber(content) {-->
+<!--                var lineNumber = content.substr(0, $('#text').prop('selectionStart')).split("\n").length;-->
+<!--                $('#lineNumber').html(lineNumber);-->
+<!--            }-->
+<!--        </script>-->
+        <style type="text/css">
+            #text {
+                position: absolute;
+                font-family: Menlo;
+                font-size: 12px;
+                width: 800px;
+                height: 500px;
+                border: none;
+                outline: none;
+                padding: 15px;
+                padding-bottom: 35px;
+                background: #EEEEEE;
+            }
+
+            #ruler {
+                position: absolute;
+                left: 925px;
+                width: 2px;
+                border-right: 1px solid lightgray;
+            }
+
+            #statusBar {
+                background-image: -ms-linear-gradient(top, #C7C7C7 0%, #8C8E8F 100%);
+                background-image: -moz-linear-gradient(top, #C7C7C7 0%, #8C8E8F 100%);
+                background-image: -o-linear-gradient(top, #C7C7C7 0%, #8C8E8F 100%);
+                background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #C7C7C7), color-stop(1, #8C8E8F));
+                background-image: -webkit-linear-gradient(top, #C7C7C7 0%, #8C8E8F 100%);
+                background-image: linear-gradient(to bottom, #C7C7C7 0%, #8C8E8F 100%);
+
+                /*background: #C7C7C7;*/
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 23px;
+                border-top: 1px solid #656565;
+            }
+
+            #statusBarText {
+                font-family: 'Lucida Grande';
+                font-size: 12px;
+                font-weight: bold;
+                color: #393C3E;
+                text-shadow: 1px 1px #CBCBCB;
+                margin-left: 6px;
+                margin-top: 3px;
+            }
+        </style>
+    </head>
+    <body style="margin: 0;">
+        <form  action="http://127.0.0.1:5000/notepad" method="POST">
+
+            <p style="position:relative; left: 680px; top: 50px">Notepad</p>
+            <textarea id="text" name="notepad" style="position: relative; left: 300px; top: 80px" autofocus spellcheck="false"></textarea>
+
+            <div id="ruler"></div>
+
+            <div id="statusBar">
+                <div id="statusBarText">Line <span id="lineNumber">1</span></div>
+            </div>
+
+            <input type="submit" value="submit" style="position:relative; top: 150px; right: 120px">
+            <a href="/"><input type="button" value="back" style="left: 40px; top: 200px; position: relative; border: 2px solid #008CBA;
+                    background-color: white; width: 100px; height: 30px"></a>
+        </form>
+    </body>
+</html>
